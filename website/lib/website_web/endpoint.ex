@@ -40,7 +40,7 @@ defmodule WebsiteWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_website_key",
-    signing_salt: "OcvM2q3a"
+    signing_salt: "tq98XHR9"
 
   plug WebsiteWeb.Router
 end
