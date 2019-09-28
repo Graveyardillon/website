@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    </head>
+    <body>
+        <div class="title" style="margin-bottom:1rem">a</div>
+
+        <div class="navigation">
+            <div class="navi">料金表</div>
+            <div class="navi">諸経費</div>
+            <div class="navi">講師情報</div>
+            <div class="navi">受講までの流れ</div>
+            <div class="navi">予約画面</div>
+            <div class="navi">会員ログイン画面</div>
+        </div>
+<br>
+        <div class="appeal">
+            当塾の魅力
+        </div>
+
+        <div class="details">
+            <div class="det">①時間帯の調整</div>
+            <div class="det">②受講時間や受講単元のカスタマイズ</div>
+            <div class="det">③お得な料金制</div>
+            <div class="det">④過去の学年にも遡れるテキスト</div>
+            <div class="det">⑤マンツーマンで苦手克服</div>
+            <div class="det">⑥不登校や塾通いが苦手な子でも受講可能</div>
+        </div>
+
+        <div style="clear:both"></div>
+
+        <div class="otherInfo">
+            <div class="info">企業情報</div>
+            <div class="info">講師専用画面</div>
+        </div>
+    </body>
+    <style>
+        body{
+            width:100%;
+            padding:0 5px;
+            margin:5px auto;
+        }
+
+        .title{
+            height:16vh;
+            text-align: center;
+            border-bottom: 1px solid #e3e3e3;
+            background: #eee;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-weight: 200;
+            font-size: 120%;
+        }
+
+        .navigation{
+            width:100%;
+            padding:0 5%;
+        }
+
+        .navigation .navi{
+            float:left;
+            width:16%;
+            padding: 4vh 0;
+            text-align: center;
+            border: 1px solid #000000;
+            background: #eee;
+            margin-bottom: 10px;
+            font-weight: 200;
+            font-size: 120%;
+        }
+
+        .appeal{
+            border: 1px solid #000000;
+            clear:both;
+            width:100%;
+            height:15vh;
+            text-align: center;
+            background: #eee;
+            margin-bottom: 10px;
+            font-weight: 200;
+            font-size: 120%;
+        }
+
+        .details{
+            width:100%;
+        }
+
+        .details .det{
+            border: 1px solid #000000;
+            float:left;
+            width:50%;
+            height:17.5vh;
+            text-align: center;
+            background: #eee;
+            font-weight: 200;
+            font-size: 120%;
+        }
+
+        .otherInfo{
+            width:90%;
+            margin:5vh auto;
+        }
+
+        .otherInfo .info{
+            border: 1px solid #000000;
+            float:left;
+            width:30%;
+            padding:4vh 0;
+            background: #eee;
+            text-align: center;
+            margin:20px 10%;
+            font-weight: 200;
+            font-size: 120%;
+        }
+
+    </style>
+
+</html>
