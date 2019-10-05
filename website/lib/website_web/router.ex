@@ -18,6 +18,7 @@ defmodule WebsiteWeb.Router do
 
     get "/", PageController, :index
     get "/home", HomeController, :index
+    get "/reserve", ReserveController, :index
   end
 
   # Other scopes may use custom stacks.
