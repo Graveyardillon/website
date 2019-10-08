@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
@@ -72,16 +73,19 @@
         subject='math'
         num=0
         function cl(sub,n){
-            if(subject != sub ){
-                t=false
+            if(subject != sub && !t){
                 cl(subject,num)
                 subject = sub
                 num = n
             }
             let m = document.getElementById(sub).children
+
             if(t){
                 for(let i=1;i<=n;i++){
+                    m[i-1].style.top = 12.1*i+"vh"
                     m[i-1].style.top = "calc((12vh+7px)*"+i+")"
+                    m[i-1].style.top = "-webkit-calc((12vh+7px)*"+i+")"
+                    m[i-1].style.top = "-moz-calc((12vh+7px)*"+i+")"
                     t=false
                 }
             }else{
@@ -90,7 +94,9 @@
                     t=true
                 }
             }
-            
+            subject = sub
+            num = n
+    
         }
     
     </script>
