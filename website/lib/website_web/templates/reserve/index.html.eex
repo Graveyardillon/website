@@ -19,48 +19,87 @@
 
         <div class="classes">
             <div class="rsrv">
-                <div class="subject"  onClick='cl("math",3)'>数学</div>
+                <div class="subject"  onClick='cl("math",3)'>数学</div>　<!--変更-->
                 
-                <div id="math">
-                <%= for n <- 1..3 do %>
-                    <div class="teacher">aaaa</div>
+                <div id="math">　<!--変更-->
+                <%= for n <- 0..2 do %>　<!--変更-->
+                    <div class="teacher">
+                        <div class="tchr" onClick="cli(0,3,<%= n %>)">aaaa</div>
+                        <div id="math_t">　<!--変更-->
+                            <%= for n <- 0..2 do %>　<!--変更-->
+                                <div class="times" >aa</div>
+                            <% end %>
+                        </div>
+                    </div>
                 <% end %>
                 </div>
 
             </div>
 
             <div class="rsrv">
-                <div class="subject" onClick='cl("sience",4)'>理科</div>
-                <div id="sience">
-                <%= for n <- 1..4 do %>
-                    <div class="teacher">aaaa</div>
+                <div class="subject"  onClick='cl("sience",2)'>理科</div>　<!--変更-->
+                
+                <div id="sience">　<!--変更-->
+                <%= for n <- 0..1 do %>　<!--変更-->
+                    <div class="teacher">
+                        <div class="tchr" onClick="cli(1,5,<%= n %>)">aaaa</div>
+                        <div id="sience_t">　<!--変更-->
+                            <%= for n <- 0..4 do %>　<!--変更-->
+                                <div class="times" >aa</div>
+                            <% end %>
+                        </div>
+                    </div>
                 <% end %>
                 </div>
             </div>
 
             <div class="rsrv">
-                <div class="subject" onClick='cl("social",3)'>社会</div>
-                <div id="social">
-                <%= for n <- 1..3 do %>
-                    <div class="teacher">aaaa</div>
+                <div class="subject"  onClick='cl("social",3)'>社会</div>　<!--変更-->
+                
+                <div id="social">　<!--変更-->
+                <%= for n <- 0..2 do %>　<!--変更-->
+                    <div class="teacher">
+                        <div class="tchr" onClick="cli(2,2,<%= n %>)">aaaa</div>
+                        <div id="social_t">　<!--変更-->
+                            <%= for n <- 0..1 do %>　<!--変更-->
+                                <div class="times" >aa</div>
+                            <% end %>
+                        </div>
+                    </div>
                 <% end %>
                 </div>
             </div>
 
             <div class="rsrv">
-                <div class="subject" onClick='cl("japanese",2)'>国語</div>
-                <div id="japanese">
-                <%= for n <- 1..2 do %>
-                    <div class="teacher">aaaa</div>
+                <div class="subject"  onClick='cl("japanese",4)'>国語</div>　<!--変更-->
+                
+                <div id="japanese">　<!--変更-->
+                <%= for n <- 0..3 do %>　<!--変更-->
+                    <div class="teacher">
+                        <div class="tchr" onClick="cli(3,2,<%= n %>)">aaaa</div>
+                        <div id="japanese_t">　<!--変更-->
+                            <%= for n <- 0..1 do %>　<!--変更-->
+                                <div class="times" >aa</div>
+                            <% end %>
+                        </div>
+                    </div>
                 <% end %>
                 </div>
             </div>
 
             <div class="rsrv">
-                <div class="subject" onClick='cl("english",5)'>英語</div>
-                <div id="english">
-                <%= for n <- 1..5 do %>
-                    <div class="teacher">aaaa</div>
+                <div class="subject"  onClick='cl("english",5)'>英語</div>　<!--変更-->
+                
+                <div id="english">　<!--変更-->
+                <%= for n <- 0..4 do %>　<!--変更-->
+                    <div class="teacher">
+                        <div class="tchr" onClick="cli(4,6,<%= n %>)">aaaa</div>
+                        <div id="english_t">　<!--変更-->
+                            <%= for n <- 0..5 do %>　<!--変更-->
+                                <div class="times" >aa</div>
+                            <% end %>
+                        </div>
+                    </div>
                 <% end %>
                 </div>
             </div>
@@ -69,34 +108,76 @@
     </body>
 
     <script type="text/javascript">
-        t=true
+        tchr=true
         subject='math'
-        num=0
-        function cl(sub,n){
-            if(subject != sub && !t){
-                cl(subject,num)
-                subject = sub
-                num = n
-            }
-            let m = document.getElementById(sub).children
+        num_tchr=0
+        num_tm=0
+        id=0
+        tm=true
 
-            if(t){
+        el = document.getElementById("math").children
+        function cl(sub,n){
+            if(subject != sub && !tchr){
+                cl(subject,num_tchr)
+                subject = sub
+                num_tchr = n
+            }
+            el = document.getElementById(sub).children
+
+            if(tchr){
                 for(let i=1;i<=n;i++){
-                    m[i-1].style.top = 12.1*i+"vh"
-                    m[i-1].style.top = "calc((12vh+7px)*"+i+")"
-                    m[i-1].style.top = "-webkit-calc((12vh+7px)*"+i+")"
-                    m[i-1].style.top = "-moz-calc((12vh+7px)*"+i+")"
-                    t=false
+                    el[i-1].style.top = 12.1*i+"vh"
+                    el[i-1].style.top = "calc((12vh+7px)*"+i+")"
+                    el[i-1].style.top = "-webkit-calc((12vh+7px)*"+i+")"
+                    el[i-1].style.top = "-moz-calc((12vh+7px)*"+i+")"
+                    tchr=false
                 }
             }else{
+                if(!tm){
+                    cli(0,num_tm,id)
+                }
                 for(let i=0;i<n;i++){
-                    m[i].style.top = "0"
-                    t=true
+                    el[i].style.top = "0"
+                    tchr=true
                 }
             }
             subject = sub
-            num = n
+            num_tchr = n
     
+        }
+
+        function cli(stn,n,i){
+            if(id!=i && !tm){
+                cli(0,num_tm,id)
+                num_tm=n
+                id=i
+            }
+
+            let m = el[i].children[1].children
+
+            if(tm){
+                if(stn>2){
+                    for(let i=0;i<n;i++){
+                        m[i].style.left = -1*(10+10*i)+"vw"
+                    }
+                }else{
+                    for(let i=0;i<n;i++){
+                        m[i].style.left = (19+10*i)+"vw"
+                    }
+                }
+
+                tm=false
+            }else{
+                for(let i=0;i<n;i++){
+                    m[i].style.left = "0"
+                }
+
+                tm=true
+            }
+
+            id=i
+            num_tm = n
+            
         }
     
     </script>
@@ -164,14 +245,36 @@
             transition: 1s;
             top:0;
             width:100%;
+            margin-bottom: 10px;
+        }
+
+        .tchr{
+            position:relative;
+            top:0;
+            width:100%;
             padding: 4vh 0;
             text-align: center;
             border: 1px solid #000000;
             background: #eee;
-            margin-bottom: 10px;
             font-weight: 200;
             font-size: 120%;
             z-index:10;
+        }
+
+        .times{
+            position:absolute;
+            transition: 1s;
+            top:0;
+            left:0;
+            right:0;
+            width:50%;
+            padding: 4vh 0;
+            text-align: center;
+            border: 1px solid #000000;
+            background: rgba(122,122,122,0.5);
+            font-weight: 200;
+            font-size: 120%;
+            z-index:1;
         }
     </style>
 </html>
